@@ -1,7 +1,10 @@
 /* CSS for styling the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-image: url("bg.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,16 +12,37 @@ body {
     margin: 0;
 }
 #weather-container {
-    background-color: #fff;
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #3997fa73;
     text-align: center;
 }
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
+@keyframes animate8345 {
+    0%,100% {
+      filter: hue-rotate(0deg);
+    }
+  
+    50% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  .loader {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #2d60ec, #3ccfda);
+    font-size: 30px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate8345 9s linear infinite;
+    font-weight: bold;
+  }
+  
 input[type="text"] {
     width: 200px;
     padding: 10px;
@@ -27,18 +51,40 @@ input[type="text"] {
     border: 1px solid #ccc;
     font-size: 16px;
 }
+
+/* From Uiverse.io by niat786 */ 
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
-    border-radius: 4px;
+    color: #fff;
+    background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+   }
+   
+   button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
     cursor: pointer;
-    font-size: 16px;
-}
-button:hover {
-    background-color: #0056b3;
-}
+   }
+   
+   @keyframes pulse512 {
+    0% {
+     box-shadow: 0 0 0 0 #05bada66;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+   }
 h2 {
     font-size: 24px;
     margin: 20px 0 10px;
