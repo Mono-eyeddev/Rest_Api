@@ -1,28 +1,27 @@
 body {
-    margin: 0; /* Remove default margin */
-    height: 100vh; /* Full viewport height */
+    margin: 0;
+    height: 100vh;
     background-image: url('images/3d-view-planet-earth.jpg');
-    background-color: rgba(104, 112, 112, 0.67); /* Semi-transparent background color */
-    background-size: cover; /* Ensure the image covers the entire element */
-    background-position: center; /* Center the image */
-    background-blend-mode: transparent; /* Blend the color and image */
-    font-family: 'Montserrat', sans-serif; /* Ensure font styling from Google Fonts */
+    background-color: rgba(104, 112, 112, 0.67);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: transparent;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
 }
 
 .weather-card {
-    background-color: rgba(119, 102, 102, 0.8); /* Semi-transparent white background for the card */
+    background-color: rgba(119, 102, 102, 0.8);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Shadow for better visibility */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
-
 
 #city-input {
     padding: 15px;
@@ -63,7 +62,6 @@ body {
 #weather-icon {
     width: 20px;
     height: 20px;
-
 }
 
 #temperature {
@@ -87,12 +85,14 @@ body {
     color: rgb(255, 255, 255);
     font-size: large;
 }
-h3{
+
+h3 {
     color: whitesmoke;
     font-size: large;
     font-weight: bold;
     align-items: center;
 }
+
 #weather-info {
     position: absolute;
     top: 20px;
@@ -102,7 +102,7 @@ h3{
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    width: 250px; /* Adjust as needed */
+    width: 250px;
     max-width: 100%;
     text-align: center;
 }
@@ -110,7 +110,7 @@ h3{
 #weather-info h3 {
     margin: 0;
     font-size: 20px;
-    color:#fcf0c9 ;
+    color: #fcf0c9;
 }
 
 #weather-info p {
@@ -134,16 +134,16 @@ h3{
 }
 
 .weather-container .logo {
-    width: 100px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 10px; /* Space between logo and content */
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
 }
 
 #weather-info video {
     max-width: 100%;
-    height: auto; /* Ensures the image scales properly */
+    height: auto;
     margin: 10px 0;
-    border-radius: 4px; /* Optional: Adds rounded corners to the image */
+    border-radius: 4px;
 }
 
 #weather-info #city-name {
@@ -160,10 +160,9 @@ h3{
 #weather-info #wind-speed {
     font-size: 20px;
     color: #000000;
-    font-style: bold
-;
+    font-style: bold;
 }
-/* From Uiverse.io by Alaner-xs */ 
+
 .card {
     width: 180px;
     height: 252px;
@@ -174,36 +173,36 @@ h3{
     position: relative;
     margin: auto;
     font-family: inherit;
-  }
-  
-  .card span {
+}
+
+.card span {
     font-weight: 600;
     color: white;
     text-align: center;
     display: block;
     padding-top: 10px;
     font-size: 1.3em;
-  }
-  
-  .card .job {
+}
+
+.card .job {
     font-weight: 400;
     color: white;
     display: block;
     text-align: center;
     padding-top: 5px;
     font-size: 1em;
-  }
-  
-  .card .img {
+}
+
+.card .img {
     width: 70px;
     height: 70px;
     background: #e8e8e8;
     border-radius: 100%;
     margin: auto;
     margin-top: 20px;
-  }
-  
-  .card button {
+}
+
+.card button {
     padding: 8px 25px;
     display: block;
     margin: auto;
@@ -213,24 +212,25 @@ h3{
     background: #e8e8e8;
     color: #111111;
     font-weight: 600;
-  }
-  
-  .card button:hover {
+}
+
+.card button:hover {
     background: #212121;
     color: #ffffff;
-  }
-  .video-container {
+}
+
+.video-container {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Adjust as needed */
-    border-radius: 15px; /* Apply border radius to the container */
-    overflow: hidden; /* Ensure the video respects the border radius */
-  }
+    max-width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+}
 
-  .video-container video {
+.video-container video {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: inherit; /* Inherit border radius from the wrapper */
-    opacity: 1; /* Adjust opacity to control transparency */
-  }
+    border-radius: inherit;
+    opacity: 1;
+}
