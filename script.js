@@ -1,32 +1,41 @@
-// JavaScript to fetch and display the weather data
-const apiKey = '4b9c6a9bcb8b83f641c2623d0ef409a1';
+const url =
+    'https://api.openweathermap.org/data/2.5/weather';
+const apiKey =
+    'f00c38e0279b7bc85480c3fe775d518c';
 
-document.getElementById('get-weather-btn').addEventListener('click', function() {
-    const city = document.getElementById('city-input').value; // Get the user input
-    if (city === '') {
-        alert('Please enter a city name');
-        return;
-    }
-
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Update the HTML with the fetched data
-        document.getElementById('city').textContent = `Weather in ${city}`;
-        document.getElementById('temperature').textContent = `${data.main.temp}°C`;
-        document.getElementById('weather-description').textContent = data.weather[0].description;
-      })
-      .catch(error => {
-        document.getElementById('city').textContent = 'Error fetching data';
-        document.getElementById('temperature').textContent = '';
-        document.getElementById('weather-description').textContent = '';
-        console.error('Error fetching data:', error);
-      });
+$(document).ready(function () {
+    weatherFn('Pune');
 });
+
+async function weatherFn(cName) {
+    const temp =
+        `${url}?q=${cName}&appid=${apiKey}&units=metric`;
+    try {
+        const res = await fetch(temp);
+        const data = await res.json();
+        if (res.ok) {
+            weatherShowFn(data);
+        } else {
+            alert('City not found. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
+
+function weatherShowFn(data) {
+    $('#city-name').text(data.name);
+    $('#date').text(moment().
+        format('MMMM Do YYYY, h:mm:ss a'));
+    $('#temperature').
+        html(`${data.main.temp}°C`);
+    $('#description').
+        text(data.weather[0].description);
+    $('#wind-speed').
+        html(`Wind Speed: ${data.wind.speed} m/s`);
+    $('#weather-icon').
+        attr('src',
+            `...`);
+    $('#weather-info').fadeIn();
+}
+
