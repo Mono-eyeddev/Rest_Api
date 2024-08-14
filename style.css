@@ -1,58 +1,236 @@
-/* CSS for styling the page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/3d-view-planet-earth.jpg');
+    background-color: rgba(104, 112, 112, 0.67); /* Semi-transparent background color */
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the image */
+    background-blend-mode: transparent; /* Blend the color and image */
+    font-family: 'Montserrat', sans-serif; /* Ensure font styling from Google Fonts */
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 100vh; /* Full viewport height */
 }
-#weather-container {
-    background-color: #fff;
+
+.weather-card {
+    background-color: rgba(119, 102, 102, 0.8); /* Semi-transparent white background for the card */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Shadow for better visibility */
 }
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-input[type="text"] {
-    width: 200px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
+
+
+#city-input {
+    padding: 15px;
+    margin: 10px 0;
+    width: 70%;
     border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
 }
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
+
+#city-input:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+#city-input::placeholder {
+    color: #aaa;
+}
+
+#city-input-btn {
+    padding: 10px;
+    background-color: #2196F3;
     color: #fff;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
 }
-button:hover {
-    background-color: #0056b3;
+
+#city-input-btn:hover {
+    background-color: #1565C0;
 }
-h2 {
+
+#weather-info {
+    display: none;
+}
+
+#weather-icon {
+    width: 20px;
+    height: 20px;
+
+}
+
+#temperature {
     font-size: 24px;
-    margin: 20px 0 10px;
+    font-weight: bold;
+    margin: 8px 0;
 }
-p {
+
+#description {
     font-size: 18px;
-    margin: 5px 0;
+    margin-bottom: 10px;
 }
-.temp {
-    font-size: 48px;
-    color: #333;
+
+#wind-speed {
+    font-size: 16px;
+    color: rgb(182, 182, 16);
 }
-.description {
-    text-transform: capitalize;
+
+#date {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+h3{
+    color: whitesmoke;
+    font-size: large;
+    font-weight: bold;
+    align-items: center;
+}
+#weather-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #7e7272;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 250px; /* Adjust as needed */
+    max-width: 100%;
+    text-align: center;
+}
+
+#weather-info h3 {
+    margin: 0;
     font-size: 20px;
-    color: #555;
+    color:#fcf0c9 ;
 }
+
+#weather-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.weather-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.weather-container .logo {
+    width: 100px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 10px; /* Space between logo and content */
+}
+
+#weather-info video {
+    max-width: 100%;
+    height: auto; /* Ensures the image scales properly */
+    margin: 10px 0;
+    border-radius: 4px; /* Optional: Adds rounded corners to the image */
+}
+
+#weather-info #city-name {
+    font-weight: bold;
+}
+
+#weather-info #temperature {
+    font-size: 24px;
+    color: #14782b;
+    margin: 10px 0;
+}
+
+#weather-info #description,
+#weather-info #wind-speed {
+    font-size: 20px;
+    color: #000000;
+    font-style: bold
+;
+}
+/* From Uiverse.io by Alaner-xs */ 
+.card {
+    width: 180px;
+    height: 252px;
+    background-image: linear-gradient(144deg,#432e23, #3a2f06 60%,#02852c);
+    border: none;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: relative;
+    margin: auto;
+    font-family: inherit;
+  }
+  
+  .card span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+  }
+  
+  .card .job {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+  }
+  
+  .card .img {
+    width: 70px;
+    height: 70px;
+    background: #e8e8e8;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  .card button {
+    padding: 8px 25px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 30px;
+    background: #e8e8e8;
+    color: #111111;
+    font-weight: 600;
+  }
+  
+  .card button:hover {
+    background: #212121;
+    color: #ffffff;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    border-radius: 15px; /* Apply border radius to the container */
+    overflow: hidden; /* Ensure the video respects the border radius */
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit; /* Inherit border radius from the wrapper */
+    opacity: 1; /* Adjust opacity to control transparency */
+  }
