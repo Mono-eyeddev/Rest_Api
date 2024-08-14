@@ -1,22 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="css.css">
+    <link rel="icon" href="images/No Background.ico" type="image/x-icon">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+"https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href=
+"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <title>Weather app</title>
 </head>
+
 <body>
-    <div id="weather-container">
-        <h1>Weather App</h1>
-        <input type="text" id="city-input" placeholder="Enter city name">
-        <button id="get-weather-btn">Get Weather</button>
-
-        <h2 id="city">City Name</h2>
-        <p class="temp" id="temperature"></p>
-        <p class="description" id="weather-description"></p>
+    <div class="weather-container">
+        <img src="images/Weather-1024.png" alt="Logo" class="logo"> <!-- Add logo here -->
     </div>
-
-    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+    
+    <div class="container">
+        <div class="weather-card">
+            <h1 style="color: green;">
+               
+            </h1>
+            <h3>
+                Weather App
+            </h3>
+            <input type="text" id="city-input"
+                placeholder="Enter city name">
+            <button id="city-input-btn"
+                    onclick="weatherFn($('#city-input').val())">
+                    Get Weather
+            </button>
+            <div id="weather-info"
+                class="animate__animated animate__fadeIn">
+                <h3 id="city-name"></h3>
+                <p id="date"></p>
+                <div class="video-container">
+                    <video autoplay loop muted>
+                        <source src="images/weather.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="wind-speed"></p>
+            </div>
+            <div class="card">
+                <div class="card-border-top">
+                </div>
+                <div class="img">
+                </div>
+                <span> felix Mutai</span>
+                <p class="job" href="">  Junior developer</p>
+                <a href="https://pmpbd4upjmccze4lu3lxvg.on.drv.tw/www.felixportfolio.com/Home.html">
+                    <button>Contact Me</button>
+                </a>                
+              </div>
+        </div>
+    </div>
+    <script src=
+"https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src=
+"https://momentjs.com/downloads/moment.min.js">
+    </script>
+    <script src="js.js"></script>
 </body>
+
 </html>
